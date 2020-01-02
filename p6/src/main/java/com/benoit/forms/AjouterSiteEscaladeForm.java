@@ -64,28 +64,6 @@ public class AjouterSiteEscaladeForm {
 		
 		if (erreurs.isEmpty()) {
 					
-		/*	Set<Secteur> secteurs = siteEscalade.getSecteurs();
-			
-			Iterator is = secteurs.iterator();
-			
-			while (is.hasNext()) {
-				
-				 Secteur secteur = (Secteur) is.next();
-				
-				 Set<Voie> voies = secteur.getVoies();
-				 
-				 Iterator iv = voies.iterator();
-				 
-				 while (iv.hasNext()) {
-					 
-					 Voie voie = (Voie) iv.next();
-					 
-					 				 			 
-				 }
-				 
-				   siteEscaladeDao.creer(secteur);
-			     }
-			      */ 
 					siteEscaladeDao.creer(siteEscalade);
 					
 					resultat = "Site ajouté avec succés"; }
@@ -146,11 +124,7 @@ public class AjouterSiteEscaladeForm {
 				String nombreSecteur = getChamp(request, CHAMP_NOMBRE_SECTEUR);
 				
 				Adherent adherent = (Adherent) session.getAttribute(CHAMP_ADHERENT); 
-				
-			  
-				
-				
-				
+							
 				SiteEscalade siteEscalade = null;
 				
 				if (session.getAttribute(CHAMP_SITE_ESCALADE) != null) {
@@ -386,18 +360,12 @@ public class AjouterSiteEscaladeForm {
     			    				}
     			    				
     			    				voie.setEquipee(equipee);
-    			    				
-    			    				 
-    			    				 
-    			    				 
+    			    		 			    				   			    				 
     		     	    }
     				
     	        }
-			
-			
-        
-			
-    				return siteEscalade;
+    			    
+    			    return siteEscalade;
  }
                 
                 private void traiterCotation( String cotation, Voie voie) {
@@ -477,15 +445,10 @@ public class AjouterSiteEscaladeForm {
 			 
 			 return valeur;
 		 
-		 }
-		
-		
-		
-		
-			
+		       }
+				
 		}
 	
-
 }
 			
 			

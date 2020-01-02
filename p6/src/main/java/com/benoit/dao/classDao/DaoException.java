@@ -3,14 +3,10 @@ package com.benoit.dao.classDao;
 	
 
 public class DaoException extends RuntimeException {
-	    /**
-		 * 
-		 */
+	 
 		private static final long serialVersionUID = 1L;
 
-		/*
-	     * Constructeurs
-	     */
+	
 	    public DaoException( String message ) {
 	        super( message );
 	    }

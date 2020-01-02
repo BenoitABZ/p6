@@ -126,16 +126,7 @@ public class SiteEscaladeDaoImpl extends SuperClassDao implements SiteEscaladeDa
 			
 
 			  Session session = DaoSession.newSession();
-			  
-			  /*
-			  
-			  String request = " SELECT se " + " FROM SiteEscalade se " + " JOIN se.secteurs secteur " + " JOIN secteur.voies voie " + " JOIN voie.longueurs longueur " 
-			                +  " WHERE se.lieu = :lieu " + " AND SIZE(secteur) > :secteurMin " + " AND SIZE(secteur) < :secteurMax "
-					        +  " AND voie.cotationVoie between :cotationMin and :cotationMax "
-			                +  " ORDER BY :critereTrieSite asc ";
-			  
-			  */ 
-			  
+
 			  System.out.println(cotationMin);
 			  
 			    Map<String, Object> parametres = new HashMap<String, Object>();
@@ -164,21 +155,7 @@ public class SiteEscaladeDaoImpl extends SuperClassDao implements SiteEscaladeDa
 				      parametres.put("secteurMax", secteurMax);
 				      premiereClause = false;
 				    }
-			    /*    
-			    if(cotationMin!=null) {
-				      requeteBuffer.append(premiereClause ? "where " : " and ");
-				      requeteBuffer.append("voie.cotationVoie >= :cotationMin");
-				      parametres.put("cotationMin", cotationMin);
-				      premiereClause = false;
-				    }
-			    
-			   if(cotationMax!=null) {
-				     requeteBuffer.append(premiereClause ? "where " : " and ");
-				     requeteBuffer.append("voie.cotationVoie <= :cotationMax");
-				     parametres.put("cotationMax",cotationMax);
-				     premiereClause = false;
-				    }
-			    */
+
 			    if(critereTrieSite!=null) {
 				      requeteBuffer.append(premiereClause ? "where " : " ");
 				      requeteBuffer.append("ORDER BY :critereTrieSite asc");
@@ -196,31 +173,9 @@ public class SiteEscaladeDaoImpl extends SuperClassDao implements SiteEscaladeDa
 			    }
 			    query.setParameter("secteurMin", secteurMin);
 			    query.setParameter("secteurMax", secteurMax);
-			    //query.setParameter("cotationMin", cotationMin);
-			    //query.setParameter("cotationMax", cotationMax);
 			    query.setParameter("critereTrieSite", critereTrieSite);
 			    
-			    
-			    /*
-			    Iterator<String> iter = parametres.keySet().iterator();
-			    
-			    while (iter.hasNext()) {
-			      String name = iter.next();
-			      Object value = parametres.get(name);
-			      query.setParameter(name, value);
-			    }
-		
-			   
-			        try {
-			        Query query = session.createQuery(request);
-			        query.setParameter("cotationMin", cotationMin);
-			        query.setParameter("cotationMax", cotationMax);
-			        query.setParameter("secteurMin", secteurMin);
-			        query.setParameter("secteurMax", secteurMax);
-			        query.setParameter("lieu", lieu);
-			        query.setParameter("critereTrieSite", critereTrieSite);
-			        
-			      */  
+	
 			       
 				List<SiteEscalade> siteEscaladesList= (List<SiteEscalade>) query.list();
 			    
@@ -241,14 +196,12 @@ public class SiteEscaladeDaoImpl extends SuperClassDao implements SiteEscaladeDa
 		        	Iterator<Entry<SiteEscalade, Integer>> itmax = mapCotationMax.entrySet().iterator();
 		    		while (itmax.hasNext()) {
 		    			Map.Entry<SiteEscalade, Integer> max = (Map.Entry<SiteEscalade, Integer>) itmax.next();
-		    			
-		    			//System.out.println(max.getKey() + " = " + max.getValue());
+
 		    			
 		    			Iterator<Entry<SiteEscalade, Integer>> itmin = mapCotationMin.entrySet().iterator();
 			    		while (itmin.hasNext()) {
 			    			Map.Entry<SiteEscalade, Integer> min = (Map.Entry<SiteEscalade, Integer>) itmin.next();
-			    			
-			    			//System.out.println(min.getKey() + " = " + min.getValue());
+
 			    			
 			    			if(min.getKey().equals(max.getKey())){
 			    				
@@ -261,53 +214,7 @@ public class SiteEscaladeDaoImpl extends SuperClassDao implements SiteEscaladeDa
 		    		}
 		            
 		    		}  
-		            
-		            
-		            
-		            
-		            
-		            
-			        
-			  /*      
-			        
-					Iterator it = se.iterator();
-					
-					while(it.hasNext()) {
-						
-						SiteEscalade siteEscalade = (SiteEscalade) it.next();
-						
-						Set<Secteur> secteurs = siteEscalade.getSecteurs();
-						
-						Iterator its = secteurs.iterator();
-						
-						while(its.hasNext()) {
-							
-							Secteur secteur= (Secteur) its.next();
-							
-							Set<Voie> voies=  secteur.getVoies();
-							
-							Iterator itv = voies.iterator();
-							
-							while(itv.hasNext()) {
-								
-								Voie voie = (Voie) itv.next();
-								
-								if (voie.getCotationVoie() >= cotationMin && voie.getCotationVoie() <= cotationMax) {
-									
-									SitesEscaladeTries.add(siteEscalade);
-									
-								}
-							}
-						}
-						
-						
-					}
-				*/	
-					
-					
-					
-					
-					
+			
 					return sitesEscaladeTries;
 			
 			      } finally {

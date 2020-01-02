@@ -10,7 +10,7 @@ import com.benoit.entities.SiteEscalade;
 
 public interface CommentaireDao extends SuperInterfaceDao {
 	
-	public List<Commentaire> trouver(SiteEscalade siteEscalade) throws DaoException;
+	List<Commentaire> trouver(SiteEscalade siteEscalade) throws DaoException;
 	
 	Commentaire trouver(String id) throws DaoException;
 

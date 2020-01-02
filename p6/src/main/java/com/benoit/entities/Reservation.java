@@ -11,9 +11,7 @@ import org.hibernate.annotations.Cascade;
 @Table(name="Reservation")
 public class Reservation implements Serializable {
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -31,12 +29,11 @@ public class Reservation implements Serializable {
 	@Column(name="statut_reservation")
 	private String statutReservation;
 	
-	//@Cascade(org.hibernate.annotations.CascadeType.ALL)
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="adherent_id")
 	private Adherent adherent;
 	
-	//@Cascade(org.hibernate.annotations.CascadeType.ALL)
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="topo_id")
 	private Topo topo;

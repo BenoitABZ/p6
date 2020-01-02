@@ -1,14 +1,12 @@
 package com.benoit.forms;
 
-import java.time.LocalDate;
+
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import com.benoit.dao.classDao.DaoException;
 import com.benoit.dao.interfaceDao.ReservationDao;
 import com.benoit.dao.interfaceDao.TopoDao;
@@ -20,7 +18,7 @@ import com.benoit.entities.Topo;
 public class AccepterReservationForm {
 	
 
-    private static final String CHAMP_TOPO = "topo";
+ 
     private static final String CHAMP_RESERVATION = "reservation";
     
     Set<Reservation> reservations = null;

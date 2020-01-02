@@ -25,40 +25,37 @@ public class RestrictionFilter implements Filter {
      * Default constructor. 
      */
     public RestrictionFilter() {
-        // TODO Auto-generated constructor stub
+    
     }
     
 	/**
 	 * @see Filter#init(FilterConfig)
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
-		// TODO Auto-generated method stub
+		
 	}
 
 	/**
 	 * @see Filter#destroy()
 	 */
 	public void destroy() {
-		// TODO Auto-generated method stub
+		
 	}
 
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-        /* Cast des objets request et response */
+	
 	      HttpServletRequest request = (HttpServletRequest) req;
 	      HttpServletResponse response = (HttpServletResponse) res;
-	      
-	      /* Non-filtrage des ressources statiques */
+	          
 	        String chemin = request.getRequestURI().substring( request.getContextPath().length() );
 	        if ( chemin.startsWith( "/inc" ) ) {
 	            chain.doFilter( request, response );
 	            return;
 	        }
 
-        /* Récupération de la session depuis la requête */
         HttpSession session = request.getSession();
 
         /**
@@ -69,7 +66,7 @@ public class RestrictionFilter implements Filter {
           
         	 request.getRequestDispatcher( VUE_CONNEXION ).forward( request, response );
         } else {
-            /* Affichage de la page restreinte */
+
         	request.setCharacterEncoding("UTF-8");
             chain.doFilter( request, response );
         }

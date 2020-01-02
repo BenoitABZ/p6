@@ -12,9 +12,6 @@ import org.hibernate.annotations.Cascade;
 @Table(name="site_escalade")
 public class SiteEscalade implements Serializable{
 
-	/**
-	 * 
-	 */
 	
 	private static final long serialVersionUID = 1L;
 
@@ -47,7 +44,6 @@ public class SiteEscalade implements Serializable{
 	@OneToMany(mappedBy="siteEscalade", fetch = FetchType.EAGER)
 	private Set<Secteur> secteurs = new HashSet<Secteur>();
 	
-	//@Cascade(org.hibernate.annotations.CascadeType.ALL)
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="adherent_id")
 	private Adherent adherent;

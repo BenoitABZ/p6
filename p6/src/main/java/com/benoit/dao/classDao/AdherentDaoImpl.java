@@ -19,8 +19,7 @@ public class AdherentDaoImpl extends SuperClassDao implements AdherentDao {
 	
 	@SuppressWarnings("unchecked")
 	public Adherent trouver(String mail, String motDePasse) throws DaoException {
-		// TODO Auto-generated method stub
-		
+			
 		    try {
 		    	
 		        Session session = DaoSession.newSession();
@@ -38,26 +37,19 @@ public class AdherentDaoImpl extends SuperClassDao implements AdherentDao {
 					
 					throw new Exception("Mail ou Mot de passe non valides");
 				}
-				
-				
-			      
+							      
 			    return adherent;
 		    	
 		    }catch(Exception e) {
 		    	
 		    	throw new DaoException(e);
-		    }
-		
-		    
-		    
-		  
-		    
+		    }		    
 		 
 	  }
 	
 	@SuppressWarnings("unchecked")
 	public Adherent trouverMailTest(String mail) throws DaoException {
-		// TODO Auto-generated method stub
+		
 		
 		    try {
 		    	
@@ -75,17 +67,12 @@ public class AdherentDaoImpl extends SuperClassDao implements AdherentDao {
 		    	
 		    	throw new DaoException(e);
 		    }
-		
-		    
-		    
-		  
-		    
-		 
+				 
 	  }
 	
 	@SuppressWarnings("unchecked")
 	public Adherent trouverMail(String mail, String mdp, String chiffrement) throws DaoException {
-		// TODO Auto-generated method stub
+		
 		
 		    try {
 		    	
@@ -95,10 +82,7 @@ public class AdherentDaoImpl extends SuperClassDao implements AdherentDao {
 				Query<Adherent> query = session.createQuery(" From Adherent a where a.mail = :mail");
 			      
 			    query.setParameter("mail", mail);
-			    
-			    
-			    
-			      
+			    		      
 				Adherent adherent = (Adherent) query.uniqueResult();
 				 ConfigurablePasswordEncryptor passwordEncryptor = new ConfigurablePasswordEncryptor();
 	          	    passwordEncryptor.setAlgorithm( chiffrement );
@@ -116,21 +100,13 @@ public class AdherentDaoImpl extends SuperClassDao implements AdherentDao {
 		    }catch(Exception e) {
 		    	
 		    	throw new DaoException(e);
-		    }
-		    
-		   
-		    
-		
-		    
-		    
-		  
-		    
+		    }		    
 		 
 	  }
 
 	@SuppressWarnings("unchecked")
 	public List<Adherent> listerAdherent() throws DaoException {
-		// TODO Auto-generated method stub
+		
 		try {
 	    	
 	        Session session = DaoSession.newSession();
@@ -157,7 +133,7 @@ public class AdherentDaoImpl extends SuperClassDao implements AdherentDao {
 
 	@SuppressWarnings("unchecked")
 	public Adherent trouver(String idString) throws DaoException {
-		// TODO Auto-generated method stub
+	
 	try {
 	    	
 	        Session session = DaoSession.newSession();
@@ -169,9 +145,7 @@ public class AdherentDaoImpl extends SuperClassDao implements AdherentDao {
 			query.setParameter("id", id);
 		           
 		   Adherent adherent = (Adherent) query.uniqueResult();
-		   
-		   //session.saveOrUpdate(adherent);
-		   
+		   	   
 		   session.close();
 		      
 		    return adherent;
@@ -185,7 +159,7 @@ public class AdherentDaoImpl extends SuperClassDao implements AdherentDao {
 	
 	@SuppressWarnings("unchecked")
 	public Adherent trouver(Long id) throws DaoException {
-		// TODO Auto-generated method stub
+		
 	try {
 	    	
 	        Session session = DaoSession.newSession();
@@ -195,8 +169,7 @@ public class AdherentDaoImpl extends SuperClassDao implements AdherentDao {
 			query.setParameter("id", id);
 		           
 		   Adherent adherent = (Adherent) query.uniqueResult();
-		   
-		   //session.saveOrUpdate(adherent);
+
 		   
 		   session.close();
 		      

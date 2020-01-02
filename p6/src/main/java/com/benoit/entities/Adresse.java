@@ -9,9 +9,7 @@ import javax.persistence.*;
 @Embeddable
 public class Adresse implements Serializable {
 	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	@Column(name="numero_voie")

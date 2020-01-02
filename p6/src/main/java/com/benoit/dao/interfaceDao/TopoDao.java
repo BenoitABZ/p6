@@ -1,6 +1,5 @@
 package com.benoit.dao.interfaceDao;
 
-import java.time.LocalDate;
 import java.util.List;
 import com.benoit.dao.classDao.DaoException;
 import com.benoit.entities.Adherent;

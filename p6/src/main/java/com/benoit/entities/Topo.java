@@ -14,9 +14,6 @@ import org.hibernate.annotations.Cascade;
 @Table(name="Topo")
 public class Topo implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -37,7 +34,6 @@ public class Topo implements Serializable{
 	@Column(name="disponibilite")
 	private String disponibilite;
 	
-	//@Cascade(org.hibernate.annotations.CascadeType.ALL)
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="adherent_id")
 	private Adherent adherent;

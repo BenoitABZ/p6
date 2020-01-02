@@ -1,7 +1,5 @@
 package com.benoit.dao.interfaceDao;
 
-import java.util.List;
-
 import com.benoit.dao.classDao.DaoException;
 
 public interface SuperInterfaceDao {

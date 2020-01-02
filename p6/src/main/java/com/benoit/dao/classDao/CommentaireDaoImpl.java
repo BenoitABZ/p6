@@ -17,8 +17,7 @@ public class CommentaireDaoImpl extends SuperClassDao implements CommentaireDao 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	
 	public List<Commentaire> trouver(SiteEscalade siteEscalade) throws DaoException {
-		
-		// TODO Auto-generated method stub
+	
 		Session session =null;
 		
 		try { 
@@ -52,7 +51,7 @@ public class CommentaireDaoImpl extends SuperClassDao implements CommentaireDao 
 
 	@SuppressWarnings("rawtypes")
 	public Commentaire trouver(String idString) throws DaoException {
-		// TODO Auto-generated method stub
+		
 	Session session =null;
 		
 		try { 

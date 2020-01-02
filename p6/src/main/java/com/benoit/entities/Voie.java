@@ -13,9 +13,6 @@ import org.hibernate.annotations.Cascade;
 @Table(name="Voie")
 public class Voie implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -35,8 +32,7 @@ public class Voie implements Serializable{
 	
 	@Column(name="equipee")
 	private Boolean equipee;
-	
-	//@Cascade(org.hibernate.annotations.CascadeType.ALL)
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="secteur_id")
 	private Secteur secteur;

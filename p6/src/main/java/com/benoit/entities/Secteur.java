@@ -30,7 +30,6 @@ public class Secteur implements Serializable{
 	@OneToMany(mappedBy="secteur", fetch = FetchType.EAGER)
 	private Set<Voie> voies = new HashSet<Voie>();
 	
-	//@Cascade(org.hibernate.annotations.CascadeType.ALL)
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="site_escalade_id")
 	private SiteEscalade siteEscalade;

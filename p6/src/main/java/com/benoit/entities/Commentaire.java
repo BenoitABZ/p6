@@ -12,9 +12,7 @@ import org.hibernate.annotations.Cascade;
 @Table(name="Commentaire")
 public class Commentaire implements Serializable{
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -29,12 +27,12 @@ public class Commentaire implements Serializable{
 	@Column(name="contenu_commentaire")
 	private String contenuCommentaire;
 	
-	//@Cascade(org.hibernate.annotations.CascadeType.ALL)
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="adherent_id")
 	private Adherent adherent;
 	
-	//@Cascade(org.hibernate.annotations.CascadeType.ALL)
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="site_escalade_id")
 	private SiteEscalade siteEscalade;

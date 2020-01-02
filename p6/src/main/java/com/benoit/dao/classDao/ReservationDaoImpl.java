@@ -87,7 +87,7 @@ public class ReservationDaoImpl extends SuperClassDao implements ReservationDao 
 	@SuppressWarnings("rawtypes")
 	public Reservation trouver(Adherent adherent) throws DaoException{
 		
-		// TODO Auto-generated method stub
+	
 		    Session session = null;
 		    
 		    try {
@@ -124,7 +124,7 @@ public class ReservationDaoImpl extends SuperClassDao implements ReservationDao 
 
 	@SuppressWarnings("rawtypes")
 	public Reservation trouver(String idString) throws DaoException {
-		// TODO Auto-generated method stub
+		
 	    Session session = null;
 	    
 	    try {
