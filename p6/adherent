@@ -1,0 +1,69 @@
+CREATE TABLE table_name (
+   column_name TYPE column_constraint,
+exit
+show tables
+\q
+show tables
+\dt
+\q
+CREATE TABLE contact (id_contact serial PRIMARY KEY, nom VARCHAR(50) NOT NULL, prenom VARCHAR(50) NOT NULL, telephone INTEGER NOT NULL, email VARCHAR(355) UNIQUE NOT NULL)
+\dt
+CREATE TABLE contact (id_contact serial PRIMARY KEY, nom VARCHAR(50) NOT NULL, prenom VARCHAR(50) NOT NULL, telephone INTEGER NOT NULL, email VARCHAR(355) UNIQUE NOT NULL);
+\dt
+\dt;
+\d contact
+CREATE TABLE contact(id_contact serial PRIMARY KEY, nom VARCHAR(50) NOT NULL, prenom VARCHAR(50) NOT NULL, telephone INTEGER NOT NULL, email VARCHAR(355) UNIQUE NOT NULL);
+\dt
+\d contact
+\q
+\dt
+\d contact
+\d contact
+\dt
+SELECT * FROM contact
+SELECT * FROM contact;
+SELECT * FROM contact ;
+\d
+\d adherent
+\l
+ALTER DATABASE p6 OWNER TO benoit_abouzeid;
+\l
+\d Voie
+ALTER TABLE Voie ALTER COLUMN cotation_voie TYPE INTEGER;
+ALTER TABLE Voie ALTER COLUMN cotation_voie TYPE INTEGER USING cotation_voie::interger;
+ALTER TABLE Voie ALTER COLUMN cotation_voie TYPE INTEGER USING cotation_voie::integer;
+\d Voie
+\d Longueur
+ALTER TABLE Longueur ALTER COLUMN cotation_longueur TYPE INTEGER USING cotation_longueur::integer;
+\d site_escalade
+\d adherent
+\d adresse
+ALTER TABLE adherent DROP COLUMN adresse_id CASCADE;
+\adherent
+\d adherent
+\d site_ecalade describe table
+\d site_escalade describe table
+\d site_escalade describe table
+SELECT * FROM public.site_escalade;
+\d adherent
+SELECT * FROM public.site_escalade;
+SELECT * FROM public.voie;
+SELECT * FROM public.adherent;
+DROP TABLE longueur CASCADE;
+\d voie
+ALTER TABLE VOIE ADD COLUMN hauteur INTEGER
+\d voie
+ALTER TABLE VOIE ADD COLUMN hauteur TYPE  INTEGER;
+ALTER TABLE voie ADD COLUMN hauteur TYPE  INTEGER;
+ALTER TABLE voie ADD COLUMN hauteur integer;
+ALTER TABLE voie ADD COLUMN nombre_longueur varchar;
+ALTER TABLE voie ALTER COLUMN hauteur TYPE VARCHAR;
+\d voie
+ALTER TABLE reservation ALTER COLUMN numero_reservation TYPE INTEGER;
+ALTER TABLE reservation ALTER COLUMN numero_reservation TYPE INTEGER USING numero_reservation::intege;
+\d reservation
+ALTER TABLE reservation ALTER COLUMN numero_reservation TYPE INTEGER USING numero_reservation::integer;
+ALTER TABLE secteur ALTER COLUMN numero_secteur TYPE INTEGER USING numero_secteur::integer;
+/d adherent
+\d adherent
+\s adherent
