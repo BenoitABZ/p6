@@ -24,12 +24,6 @@ import com.benoit.entities.Reservation;
 import com.benoit.entities.Topo;
 import com.benoit.forms.ListerReservationsToposForm;
 
-
-
-
-/**
- * Servlet implementation class ListerReservationsTopos
- */
 @WebServlet( "/ListerReservationsTopos" )
 public class ListerReservationsTopos extends HttpServlet {
 	private static final long serialVersionUID = 1L;	
@@ -40,13 +34,10 @@ public class ListerReservationsTopos extends HttpServlet {
 	private static final String ATT_MAP_RESERVATIONS    = "mapReservations";
 	TopoDao topoDao = null;
 	ReservationDao reservationDao = null;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public ListerReservationsTopos() {
         super();
-        // TODO Auto-generated constructor stub
+     
     }
     
     public void init() {
@@ -55,17 +46,13 @@ public class ListerReservationsTopos extends HttpServlet {
         this.reservationDao = daoSession.getReservationDao();
         }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	@SuppressWarnings("rawtypes")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
         ListerReservationsToposForm form = new  ListerReservationsToposForm (reservationDao, topoDao);
         
         HttpSession session = request.getSession();
 
-       /* Traitement de la requête et récupération du bean en résultant */
         List<Topo> topos = form.listerReservationsTopos(request, session);
         
         Map<Long, Topo> mapTopos = new HashMap<Long, Topo>();
@@ -85,9 +72,7 @@ public class ListerReservationsTopos extends HttpServlet {
             		 }          		 
             	
         }	
-            
-        
-         
+                  
     	request.setAttribute( ATT_FORM, form );
     	
     	request.setAttribute( ATT_LIST_TOPO, topos );
@@ -102,11 +87,9 @@ public class ListerReservationsTopos extends HttpServlet {
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		doGet(request, response);
 	}
 

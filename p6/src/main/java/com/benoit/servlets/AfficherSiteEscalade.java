@@ -20,9 +20,7 @@ import com.benoit.entities.Topo;
 import com.benoit.forms.TrouverSiteEscaladeForm;
 import com.benoit.forms.TrouverTopoForm;
 
-/**
- * Servlet implementation class AfficherSiteEscalade
- */
+
 @WebServlet( "/AfficherSiteEscalade" )
 public class AfficherSiteEscalade extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -34,12 +32,9 @@ public class AfficherSiteEscalade extends HttpServlet {
 	
 	SiteEscaladeDao siteEscaladeDao = null;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public AfficherSiteEscalade() {
         super();
-        // TODO Auto-generated constructor stub
+       
     }
     
     public void init() {
@@ -47,11 +42,8 @@ public class AfficherSiteEscalade extends HttpServlet {
     	this.siteEscaladeDao = daoSession.getSiteEscaladeDao();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
         String id = request.getParameter(ATT_ID);
 		
 		TrouverSiteEscaladeForm form = new TrouverSiteEscaladeForm(siteEscaladeDao);
@@ -71,11 +63,8 @@ public class AfficherSiteEscalade extends HttpServlet {
 		this.getServletContext().getRequestDispatcher(VUE_SITE_ESCALADE).forward( request, response );
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		doGet(request, response);
 	}
 

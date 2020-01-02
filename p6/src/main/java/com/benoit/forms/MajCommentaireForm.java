@@ -116,12 +116,8 @@ public class MajCommentaireForm {
 				 return valeur;
 			 
 			 }
-			
-			
-			
-			
-				
-			}
+						
+     	}
 		
 
 }

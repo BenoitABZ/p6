@@ -18,9 +18,6 @@ import com.benoit.forms.SupprimerTopoForm;
 import com.benoit.forms.TrouverCommentaireForm;
 import com.benoit.forms.TrouverTopoForm;
 
-/**
- * Servlet implementation class SupprimerCommentaire
- */
 @WebServlet( "/SupprimerCommentaire" )
 public class SupprimerCommentaire extends HttpServlet {
 	private static final long serialVersionUID         = 1L;
@@ -30,13 +27,10 @@ public class SupprimerCommentaire extends HttpServlet {
 	private static final String ATT_FORM_S             = "formS";
 	private static final String ATT_FORM_T             = "formT";
 	CommentaireDao commentaireDao = null;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public SupprimerCommentaire() {
         super();
-        // TODO Auto-generated constructor stub
+      
     }
     
     public void init() {
@@ -44,11 +38,8 @@ public class SupprimerCommentaire extends HttpServlet {
     	this.commentaireDao = daoSession.getCommentaireDao();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		String id = request.getParameter(ATT_ID);
 		
 		TrouverCommentaireForm formT = new TrouverCommentaireForm(commentaireDao);
@@ -70,11 +61,8 @@ public class SupprimerCommentaire extends HttpServlet {
 		response.sendRedirect(VUE_LISTE_COMMENTAIRE);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		doGet(request, response);
 	}
 

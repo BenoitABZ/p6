@@ -1,6 +1,5 @@
 package com.benoit.forms;
 
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -70,25 +69,9 @@ public class ListerAdherentForm {
 				
 			}
 
-	
-    /*
-     * Ajoute un message correspondant au champ spécifié à la map des erreurs.
-     */
      private void setErreur( String champ, String message ) {
         erreurs.put( champ, message );
     }
 
-     private String getChamp (HttpServletRequest request, String parameter) {
-	
-	 String valeur = request.getParameter(parameter);
-	
-	 if(valeur == null) return null;
-	
-	 else {
-		 
-		 return valeur;
-	 
-	 }
-  }
 
 }

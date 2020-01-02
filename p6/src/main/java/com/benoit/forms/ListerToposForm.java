@@ -1,17 +1,10 @@
 package com.benoit.forms;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
+
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import com.benoit.dao.classDao.DaoException;
 import com.benoit.dao.interfaceDao.TopoDao;
 import com.benoit.entities.Topo;
@@ -87,10 +80,6 @@ public class ListerToposForm {
 				
 			}
 
-	
-    /*
-     * Ajoute un message correspondant au champ spécifié à la map des erreurs.
-     */
      private void setErreur( String champ, String message ) {
         erreurs.put( champ, message );
     }

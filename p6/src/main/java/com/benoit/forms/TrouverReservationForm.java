@@ -1,13 +1,11 @@
 package com.benoit.forms;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import com.benoit.dao.classDao.DaoException;
 import com.benoit.dao.interfaceDao.ReservationDao;
 import com.benoit.entities.Adherent;

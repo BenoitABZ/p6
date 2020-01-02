@@ -14,9 +14,6 @@ import com.benoit.entities.Topo;
 import com.benoit.forms.SupprimerTopoForm;
 import com.benoit.forms.TrouverTopoForm;
 
-/**
- * Servlet implementation class SupprimerTopo
- */
 @WebServlet( "/SupprimerTopo" )
 public class SupprimerTopo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -26,13 +23,10 @@ public class SupprimerTopo extends HttpServlet {
 	private static final String ATT_FORM_S             = "formS";
 	private static final String ATT_FORM_T             = "formT";
 	TopoDao topoDao = null;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public SupprimerTopo() {
         super();
-        // TODO Auto-generated constructor stub
+    
     }
     
     public void init() {
@@ -40,11 +34,8 @@ public class SupprimerTopo extends HttpServlet {
     	this.topoDao = daoSession.getTopoDao();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		String id = request.getParameter(ATT_ID);
 		
 		TrouverTopoForm formT = new TrouverTopoForm(topoDao);
@@ -66,11 +57,8 @@ public class SupprimerTopo extends HttpServlet {
 		this.getServletContext().getRequestDispatcher( VUE_TOPOS_ADHERENT ).forward( request, response );
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		doGet(request, response);
 	}
 

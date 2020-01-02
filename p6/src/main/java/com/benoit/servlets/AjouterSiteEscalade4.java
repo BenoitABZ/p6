@@ -13,9 +13,6 @@ import com.benoit.dao.interfaceDao.SiteEscaladeDao;
 import com.benoit.entities.SiteEscalade;
 import com.benoit.forms.AjouterSiteEscaladeForm;
 
-/**
- * Servlet implementation class AjouterSiteEscalade4
- */
 @WebServlet( "/AjouterSiteEscalade4" )
 public class AjouterSiteEscalade4 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -24,13 +21,10 @@ public class AjouterSiteEscalade4 extends HttpServlet {
 	private static final String VUE_AJOUTER_SITE_5  = "/p6/AjouterSiteEscalade5";
 	private static final String VUE_AJOUTER_SITE_4  = "/restreint/AjouterSiteEscalade4.jsp";;
     SiteEscaladeDao siteEscaladeDao = null;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public AjouterSiteEscalade4() {
         super();
-        // TODO Auto-generated constructor stub
+     
     }
     
     public void init() {
@@ -38,21 +32,16 @@ public class AjouterSiteEscalade4 extends HttpServlet {
     	this.siteEscaladeDao = daoSession.getSiteEscaladeDao();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		response.sendRedirect(request.getContextPath()+VUE_AJOUTER_SITE_4);
 		
         System.out.println("doget");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		AjouterSiteEscaladeForm form = new AjouterSiteEscaladeForm(siteEscaladeDao);
 		
 		request.setCharacterEncoding("UTF-8");

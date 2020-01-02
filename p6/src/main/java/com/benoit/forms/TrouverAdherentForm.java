@@ -101,11 +101,8 @@ public class TrouverAdherentForm {
 			 
 			 return valeur;
 		 
-		 }
-		
-		
-		
-		
+		        }
+			
 			
 		}
 

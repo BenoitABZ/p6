@@ -12,44 +12,32 @@ import com.benoit.dao.interfaceDao.AdherentDao;
 import com.benoit.entities.Adherent;
 import com.benoit.forms.InscriptionForm;
 
-/**
- * Servlet implementation class Inscription
- */
+
 @WebServlet("/Inscription")
 public class Inscription extends HttpServlet {
 	private static final long serialVersionUID = 1L;	
 	private static final String VUE_SUCCES = "/p6/Connexion";
 	private static final String VUE_FORM   = "/Inscription.jsp";	
 	AdherentDao adherentDao = null;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public Inscription() {
         super();
-        // TODO Auto-generated constructor stub
+       
     }
      
     public void init() {
     	DaoSession daoSession = new DaoSession();
     	this.adherentDao = daoSession.getAdherentDao();
     }
-    
-    
-    
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		this.getServletContext().getRequestDispatcher(VUE_FORM).forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 	    InscriptionForm form = new InscriptionForm(adherentDao);
 		
 	    request.setCharacterEncoding("UTF-8");
@@ -60,14 +48,9 @@ public class Inscription extends HttpServlet {
 		request.setAttribute("erreurs", form.getErreurs());
 		
 		if (form.getErreurs().isEmpty()) {
-			
-			//List <Contact> contacts = form.recuperer();
-			
-			//request.setAttribute("contacts", contacts);
-			
+
 			response.sendRedirect(VUE_SUCCES);
-			
-			/*this.getServletContext().getRequestDispatcher(VUE_SUCCES).forward(request, response); */
+
 		}
 		
 		else {

@@ -17,9 +17,6 @@ import com.benoit.forms.LabelSiteEscaladeForm;
 import com.benoit.forms.TrouverAdherentForm;
 import com.benoit.forms.UpgradeAdherentForm;
 
-/**
- * Servlet implementation class LabelSiteEscalade
- */
 @WebServlet( "/LabelSiteEscalade" )
 public class LabelSiteEscalade extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -27,13 +24,10 @@ public class LabelSiteEscalade extends HttpServlet {
 	private static final String VUE_SITE_ESCALADE        = "/AfficherSiteEscalade.jsp";
 	private static final String ATT_FORM                 = "form";
 	SiteEscaladeDao siteEscaladeDao = null;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public LabelSiteEscalade() {
         super();
-        // TODO Auto-generated constructor stub
+      
     }
     
     
@@ -43,11 +37,8 @@ public class LabelSiteEscalade extends HttpServlet {
   
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		LabelSiteEscaladeForm form = new LabelSiteEscaladeForm (siteEscaladeDao);
 		
 		HttpSession session = request.getSession();
@@ -61,11 +52,8 @@ public class LabelSiteEscalade extends HttpServlet {
 		this.getServletContext().getRequestDispatcher(VUE_SITE_ESCALADE).forward( request, response );
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		doGet(request, response);
 	}
 

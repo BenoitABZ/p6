@@ -32,11 +32,9 @@
                     <th>Action</th>
                    
                                      
-                </tr>
-                <%-- Parcours de la liste des contacts, et utilisation de l'objet varStatus. --%>
+                </tr>           
                 <c:forEach items="${ requestScope.mapAdherents }" var="mapAdherent" varStatus="boucle">
-                
-                    <%-- Affichage des propriétés du bean SiteEscalade--%>
+
                   <tr>  
                     <td><c:out value="${ mapAdherent.value.nom }"></c:out></td>                   
                     <td><c:out value="${ mapAdherent.value.prenom }"></c:out></td>

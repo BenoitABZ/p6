@@ -23,9 +23,6 @@ import com.benoit.entities.Topo;
 import com.benoit.forms.ConvertDateFrForm;
 import com.benoit.forms.ListerToposAdherentForm;
 
-/**
- * Servlet implementation class TopoAdherent
- */
 @WebServlet( "/ListerToposAdherent" )
 public class ListerToposAdherent extends HttpServlet {
 	private static final long serialVersionUID            = 1L;
@@ -38,12 +35,9 @@ public class ListerToposAdherent extends HttpServlet {
 	private static final String ATT_LIST_DATE             = "datesParution";
 	TopoDao topoDao = null;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public ListerToposAdherent() {
         super();
-        // TODO Auto-generated constructor stub
+   
     }
     
     public void init() {
@@ -51,11 +45,9 @@ public class ListerToposAdherent extends HttpServlet {
     	this.topoDao = daoSession.getTopoDao();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	@SuppressWarnings("rawtypes")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		ListerToposAdherentForm form = new ListerToposAdherentForm(topoDao);
 		
 		HttpSession session = request.getSession();
@@ -85,7 +77,7 @@ public class ListerToposAdherent extends HttpServlet {
          			 if(statut.equals("En attente d'acceptation")) {
          			 
          			 reservationsSum.add(reservation);
-         			 }
+         			   }
          		 }   
           }
           
@@ -104,11 +96,8 @@ public class ListerToposAdherent extends HttpServlet {
 	    this.getServletContext().getRequestDispatcher(VUE_TOPO).forward( request, response );
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		doGet(request, response);
 	}
 

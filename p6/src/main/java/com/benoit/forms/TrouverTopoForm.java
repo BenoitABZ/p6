@@ -35,9 +35,7 @@ public class TrouverTopoForm {
         Topo topo = null;
 		
 		try {
-			
-			
-				
+								
 				topo = topoDao.trouver(id);
 				
 				if(topo != null) {

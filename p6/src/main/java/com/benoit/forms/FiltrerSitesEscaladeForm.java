@@ -20,12 +20,8 @@ public class FiltrerSitesEscaladeForm {
     private static final String CHAMP_COTATION_MAX       = "cotationMax";
     private static final String CHAMP_CRITERE_TRIE_SITE  = "critereTrieSite";
 	private static final String CHAMP_DEPARTEMENT        = "departement";
-	private static final String CHAMP_COMMUNE            = "commune";
-	private static final String CHAMP_NOM                = "nom";
 
-	
 
-	
     private String              resultat;
     
     private Map<String, String> erreurs         = new HashMap<String, String>();
@@ -64,16 +60,12 @@ public class FiltrerSitesEscaladeForm {
 	}
 	
 	public Set<SiteEscalade> filtrer(HttpServletRequest request) {
-		
-		
-		
+	
 		Integer secteurMin     = convertInteger(getChamp (request, CHAMP_SECTEUR_MIN));
 		Integer secteurMax     = convertInteger(getChamp (request, CHAMP_SECTEUR_MAX));
 		Integer cotationMin    = convertInteger(getChamp (request, CHAMP_COTATION_MIN));
 		Integer cotationMax    = convertInteger(getChamp (request, CHAMP_COTATION_MAX));
 		String departement     = getChamp (request, CHAMP_DEPARTEMENT);
-		String commune         = getChamp (request, CHAMP_COMMUNE);
-		String nom             = getChamp (request, CHAMP_NOM);
 		String critereTrieSite = getChamp (request, CHAMP_CRITERE_TRIE_SITE);
 		
 		
@@ -114,10 +106,6 @@ public class FiltrerSitesEscaladeForm {
 				
 			}
 
-	
-    /*
-     * Ajoute un message correspondant au champ spécifié à la map des erreurs.
-     */
      private void setErreur( String champ, String message ) {
         erreurs.put( champ, message );
     }

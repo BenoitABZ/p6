@@ -21,10 +21,6 @@ import com.benoit.entities.Commentaire;
 import com.benoit.forms.ConvertDateFrForm;
 import com.benoit.forms.ListerCommentairesForm;
 
-
-/**
- * Servlet implementation class ListerCommentaire
- */
 @WebServlet( "/ListerCommentaires" )
 public class ListerCommentaires extends HttpServlet {
 	private static final long serialVersionUID       = 1L;
@@ -37,14 +33,10 @@ public class ListerCommentaires extends HttpServlet {
 	private static final String ATT_LIST_DATE        = "datesCommentaire";
 	
 	CommentaireDao commentaireDao = null;
-	 
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public ListerCommentaires() {
         super();
-        // TODO Auto-generated constructor stub
+      
     }
     
     public void init() {
@@ -53,16 +45,12 @@ public class ListerCommentaires extends HttpServlet {
     
         }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
         ListerCommentairesForm form = new ListerCommentairesForm(commentaireDao);
          
         HttpSession session = request.getSession();
 
-       /* Traitement de la requête et récupération du bean en résultant */
         List<Commentaire> commentaires = form.listerCommentaires(request, session);
         
         ConvertDateFrForm formC = new ConvertDateFrForm(); 
@@ -92,13 +80,9 @@ public class ListerCommentaires extends HttpServlet {
     		response.sendRedirect(request.getContextPath() + VUE_COMMENTAIRE);
     	}
 }
-	
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		doGet(request, response);
 	}
 

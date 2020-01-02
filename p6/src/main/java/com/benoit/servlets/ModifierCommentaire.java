@@ -17,9 +17,6 @@ import com.benoit.forms.MajCommentaireForm;
 import com.benoit.forms.TrouverCommentaireForm;
 import com.benoit.forms.TrouverTopoForm;
 
-/**
- * Servlet implementation class ModifierCommentaire
- */
 @WebServlet( "/ModifierCommentaire" )
 public class ModifierCommentaire extends HttpServlet {
 	private static final long serialVersionUID       = 1L;
@@ -27,16 +24,13 @@ public class ModifierCommentaire extends HttpServlet {
 	private static final String ATT_COMMENTAIRE      = "commentaire";
 	private static final String ATT_FORM             = "form";
 	private static final String VUE_LIST_COMMENTAIRE = "/p6/ListerCommentaires";
-	private static final String VUE_COMMENTAIRE      = "/restreint/AfficherCommentaire.jsp"; //Afficher commentaire
+	private static final String VUE_COMMENTAIRE      = "/restreint/AfficherCommentaire.jsp"; 
 	
 	CommentaireDao commentaireDao = null;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public ModifierCommentaire() {
         super();
-        // TODO Auto-generated constructor stub
+      
     }
     
     public void init() {
@@ -44,12 +38,8 @@ public class ModifierCommentaire extends HttpServlet {
     	this.commentaireDao = daoSession.getCommentaireDao();
     }
 
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		String id = request.getParameter(ATT_ID);
 		
 		 request.setCharacterEncoding("UTF-8");
@@ -67,21 +57,8 @@ public class ModifierCommentaire extends HttpServlet {
 		this.getServletContext().getRequestDispatcher( VUE_COMMENTAIRE ).forward( request, response );
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
-       /*  String id = request.getParameter(ATT_ID);
-		
-		TrouverCommentaireForm form = new TrouverCommentaireForm(commentaireDao);
-		
-		Commentaire commentaire = form.trouver(id);
-		
-		request.setAttribute(ATT_COMMENTAIRE, commentaire); 
-		
-		*/
+
 		
 		MajCommentaireForm formC = new MajCommentaireForm(commentaireDao);
 		
@@ -100,6 +77,6 @@ public class ModifierCommentaire extends HttpServlet {
 			
 			this.getServletContext().getRequestDispatcher( VUE_COMMENTAIRE ).forward( request, response );
 		}
-	}
+	 }
 
 }

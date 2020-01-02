@@ -159,20 +159,18 @@ public class MajTopoForm {
 	        				         
 	        						
 	        						reservationDao.supprimer(reservation);
-	        						
-	        						
-	        						
-	        						
+	        							        						
 	        					}
 	      	        						        					
-	        				}
-	        				topo.setReservations(reservations);
+	        			}
+	        				
+	        		topo.setReservations(reservations);
 	        	}
 	   	        			        		
-	        }
+	      }
 	        
 	        
-		}
+	}
 	        
 		private void traiterDateParution( String date, Topo topo) {
 			
@@ -229,11 +227,8 @@ public class MajTopoForm {
 				 
 				 return valeur;
 			 
-			 }
-			
-			
-			
-			
+			          }
+					
 				
 			}
 

@@ -67,9 +67,7 @@ public class MajAdherentForm {
 		String ville = getChamp (request, CHAMP_VILLE);
 		String confirmationMotDePasse = getChamp( request, CHAMP_CONFIRMATION);
 		
-		
-	    //Adherent adherent = adherentDao.trouver(CHAMP_EMAIL, CHAMP_MOT_DE_PASSE);
-		
+
 		Adresse adresse = adherent.getAdresse();
 		
 		Boolean membre = false;
@@ -92,8 +90,7 @@ public class MajAdherentForm {
 			
 			
 			adherent.setAdresse(adresse);
-			
-			//Long id = adherent.getId();
+
 			
 			adherentDao.maj(adherent);
 			
@@ -258,10 +255,7 @@ public class MajAdherentForm {
 			 }
 			
 		}
-		
-	    /*
-	     * Ajoute un message correspondant au champ spécifié à la map des erreurs.
-	     */
+
 	     private void setErreur( String champ, String message ) {
 	        erreurs.put( champ, message );
 	    }

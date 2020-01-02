@@ -56,17 +56,7 @@
      </form>
      
       </fieldset> 
-     
       
-      
-      
-      
-      
-     
-     
-     
-   
-    
     <table>
            <caption class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</caption> 
            <c:if test="${!empty requestScope.mapTopos}">     
@@ -77,7 +67,6 @@
                  
                                      
                 </tr>
-                <%-- Parcours de la liste des contacts, et utilisation de l'objet varStatus. --%>
                 <c:forEach items="${ requestScope.mapTopos }" var="mapTopo" varStatus="boucle1">
                 
                 <c:forEach items="${ requestScope.datesParution }" var="dateParution" varStatus="boucle2">

@@ -25,10 +25,6 @@ import com.benoit.forms.ConnexionForm;
 import com.benoit.forms.FiltrerSitesEscaladeForm;
 import com.benoit.forms.ListerSitesEscaladeForm;
 
-
-/**
- * Servlet implementation class ListerSitesEscalade
- */
 @WebServlet( "/ListerSitesEscalade" )
 public class ListerSitesEscalade extends HttpServlet {
 	private static final long serialVersionUID       = 1L;
@@ -42,26 +38,20 @@ public class ListerSitesEscalade extends HttpServlet {
 	
     SiteEscaladeDao siteEscaladeDao = null;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public ListerSitesEscalade() {
         super();
-        // TODO Auto-generated constructor stub
+      
     }
     public void init() {
     DaoSession daoSession = new DaoSession();
     this.siteEscaladeDao = daoSession.getSiteEscaladeDao();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		        ListerSitesEscaladeForm form = new ListerSitesEscaladeForm(siteEscaladeDao);
 
-	        /* Traitement de la requête et récupération du bean en résultant */
 	            Set<SiteEscalade> sitesEscalade = form.lister();
 	            
 	            Map<Long, SiteEscalade> mapSitesEscalade = new HashMap<Long, SiteEscalade>();
@@ -92,16 +82,11 @@ public class ListerSitesEscalade extends HttpServlet {
 	            this.getServletContext().getRequestDispatcher(VUE_SITE_ESCALADE).forward( request, response );
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		 /* Préparation de l'objet formulaire */
+
      
 		        FiltrerSitesEscaladeForm form = new FiltrerSitesEscaladeForm(siteEscaladeDao);
 
-	        /* Traitement de la requête et récupération du bean en résultant */
 		        Set<SiteEscalade> sitesEscalade = form.filtrer(request);
 	            
 	            Map<Long, SiteEscalade> mapSitesEscalade = new HashMap<Long, SiteEscalade>();

@@ -15,22 +15,17 @@ import com.benoit.entities.Adherent;
 import com.benoit.entities.Adresse;
 import com.benoit.forms.MajAdherentForm;
 
-/**
- * Servlet implementation class ModifierAdherent
- */
 @WebServlet( "/ModifierInformationsAdherent" )
 public class ModifierInformationsAdherent extends HttpServlet {
-	private static final long serialVersionUID      = 1L;	
-	private static final String VUE_SUCCES          = "/p6/Connexion";
+	private static final long serialVersionUID       = 1L;	
+	private static final String VUE_SUCCES           = "/p6/Connexion";
 	private static final String VUE_FORM1            = "/p6/restreint/ModifierInformationsAdherent.jsp";
 	private static final String VUE_FORM2            = "/restreint/ModifierInformationsAdherent.jsp";
 	AdherentDao adherentDao = null;  
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+ 
     public ModifierInformationsAdherent() {
         super();
-        // TODO Auto-generated constructor stub
+   
     }
     
     public void init() {
@@ -38,19 +33,13 @@ public class ModifierInformationsAdherent extends HttpServlet {
     	this.adherentDao = daoSession.getAdherentDao();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		response.sendRedirect(VUE_FORM1);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 	    MajAdherentForm form = new MajAdherentForm(adherentDao);
 		
 	    HttpSession session = request.getSession();
@@ -65,14 +54,9 @@ public class ModifierInformationsAdherent extends HttpServlet {
 		
 		
 		if (form.getErreurs().isEmpty()) {
-			
-			//List <Contact> contacts = form.recuperer();
-			
-			//request.setAttribute("contacts", contacts);
-			
+
 			response.sendRedirect(VUE_SUCCES);
-			
-			/*this.getServletContext().getRequestDispatcher(VUE_SUCCES).forward(request, response); */
+
 		}
 		
 		else {

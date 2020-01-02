@@ -14,9 +14,6 @@ import com.benoit.dao.interfaceDao.TopoDao;
 import com.benoit.entities.Topo;
 import com.benoit.forms.AjouterTopoForm;
 
-/**
- * Servlet implementation class AjouterTopo
- */
 @WebServlet( "/AjouterTopo" )
 public class AjouterTopo extends HttpServlet {
 	private static final long serialVersionUID   = 1L;
@@ -26,13 +23,10 @@ public class AjouterTopo extends HttpServlet {
 	private static final String VUE_TOPO1         = "/p6/restreint/AjouterTopo.jsp";
 	private static final String VUE_TOPO2         = "/restreint/AjouterTopo.jsp";
     TopoDao topoDao = null;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public AjouterTopo() {
         super();
-        // TODO Auto-generated constructor stub
+      
     }
     
     public void init() {
@@ -40,19 +34,13 @@ public class AjouterTopo extends HttpServlet {
     	this.topoDao = daoSession.getTopoDao();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		response.sendRedirect(VUE_TOPO1);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		AjouterTopoForm form = new AjouterTopoForm(topoDao);
 		
 		HttpSession session = request.getSession();

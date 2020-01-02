@@ -16,9 +16,7 @@ import com.benoit.entities.Topo;
 import com.benoit.forms.AjouterCommentaireForm;
 import com.benoit.forms.AjouterTopoForm;
 
-/**
- * Servlet implementation class AjouterCommentaire
- */
+
 @WebServlet( "/AjouterCommentaire" )
 public class AjouterCommentaire extends HttpServlet {
 	private static final long serialVersionUID         = 1L;
@@ -28,13 +26,10 @@ public class AjouterCommentaire extends HttpServlet {
 	private static final String VUE_COMMENTAIRE        = "/restreint/AjouterCommentaire.jsp";
     CommentaireDao commentaireDao = null;
        
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public AjouterCommentaire() {
         super();
-        // TODO Auto-generated constructor stub
+    
     }
     
     public void init() {
@@ -42,19 +37,13 @@ public class AjouterCommentaire extends HttpServlet {
     	this.commentaireDao = daoSession.getCommentaireDao();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		response.sendRedirect(request.getContextPath() + VUE_COMMENTAIRE);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 	    AjouterCommentaireForm form = new AjouterCommentaireForm(commentaireDao);
 	    
 	    request.setCharacterEncoding("UTF-8");

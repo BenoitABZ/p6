@@ -15,9 +15,7 @@ import com.benoit.entities.Topo;
 import com.benoit.forms.MajTopoForm;
 import com.benoit.forms.TrouverTopoForm;
 
-/**
- * Servlet implementation class InformationsTopo
- */
+
 @WebServlet( "/ModifierTopo" )
 public class ModifierTopo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -28,13 +26,10 @@ public class ModifierTopo extends HttpServlet {
 	private static final String ATT_FORM             = "form";
 	TopoDao topoDao = null;
 	ReservationDao reservationDao = null;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public ModifierTopo() {
         super();
-        // TODO Auto-generated constructor stub
+
     }
     
     public void init() {
@@ -43,11 +38,8 @@ public class ModifierTopo extends HttpServlet {
     	this.reservationDao=daoSession.getReservationDao();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		String id = request.getParameter(ATT_ID);
 		
 		TrouverTopoForm form = new TrouverTopoForm(topoDao);
@@ -64,11 +56,8 @@ public class ModifierTopo extends HttpServlet {
 		this.getServletContext().getRequestDispatcher( VUE_TOPO_INFO ).forward( request, response );
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		MajTopoForm form = new MajTopoForm(topoDao, reservationDao);
 		
 		HttpSession session = request.getSession();
@@ -86,9 +75,9 @@ public class ModifierTopo extends HttpServlet {
 			
 			 this.getServletContext().getRequestDispatcher( VUE_TOPO_INFO ).forward( request, response );
 			 
-		 }
+		   }
 		
 		
-	}
+	  }
 
 }

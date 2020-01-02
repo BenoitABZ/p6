@@ -118,9 +118,7 @@ public class ConnexionForm {
     			throw new Exception ("Le champ " + parametre + " doit contenir au moins " + nbreCa + " caractère(s).");
     		}
     	}
-    	  /*
-         * Ajoute un message correspondant au champ spécifié à la map des erreurs.
-         */
+    	 
          private void setErreur( String champ, String message ) {
             erreurs.put( champ, message );
         }

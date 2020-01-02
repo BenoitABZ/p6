@@ -172,9 +172,7 @@ public class MajSiteEscaladeForm {
 				        	 
 				        	 
 				         }
-				}
-				             //Does it need to add, remove and set? 				           
-				         
+				     }			      				           			         
 				}
 				
 				
@@ -218,13 +216,13 @@ public class MajSiteEscaladeForm {
  			    				
  			    				String CHAMP_HAUTEUR = "hauteur" + j;
     		    					
-    			    				String hauteur = request.getParameter(CHAMP_HAUTEUR);
+    			    			String hauteur = request.getParameter(CHAMP_HAUTEUR);
     			    				
-	                                String CHAMP_EQUIPEE = "equipee" + j;
+	                            String CHAMP_EQUIPEE = "equipee" + j;
     		    					
-    			    				String equipeeChamps = request.getParameter(CHAMP_EQUIPEE);
+    			    		    String equipeeChamps = request.getParameter(CHAMP_EQUIPEE);
     			    				
-    			    			    String CHAMP_NOMBRE_LONGUEUR= "nombreLongueur" + j;
+    			    			String CHAMP_NOMBRE_LONGUEUR= "nombreLongueur" + j;
  		    					
  			    				String nombreLongueur = request.getParameter(CHAMP_NOMBRE_LONGUEUR);
  			    				
@@ -257,9 +255,7 @@ public class MajSiteEscaladeForm {
 	return siteEscalade;		
 }
 			
-	
-	
-			
+				
    private void setErreur( String champ, String message ) {
      erreurs.put( champ, message );
  }
@@ -274,12 +270,8 @@ public class MajSiteEscaladeForm {
 			 
 			 return valeur;
 		 
-		 }
-		
-		
-		
-		
-			
+		      }
+					
 		}
 
 }

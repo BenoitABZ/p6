@@ -19,27 +19,21 @@ import com.benoit.forms.DemanderReservationForm;
 import com.benoit.forms.TrouverSiteEscaladeForm;
 import com.benoit.forms.TrouverTopoForm;
 
-/**
- * Servlet implementation class DemanderReservation
- */
 @WebServlet( "/DemanderReservation" )
 public class DemanderReservation extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String ATT_ID                          = "idTopo";
 	private static final String VUE_CONFIRMATION_RESERVATION    = "/AfficherReservationAdherent";
 	private static final String ATT_TOPO                        = "topo";
-	private static final String ATT_FORM_T = "formT";
-	private static final String ATT_FORM_R = "formR";
-	private static final String ATT_RESERVATION = "reservation";
+	private static final String ATT_FORM_T                      = "formT";
+	private static final String ATT_FORM_R                      = "formR";
+	private static final String ATT_RESERVATION                 = "reservation";
 	TopoDao topoDao = null;
 	ReservationDao reservationDao = null;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public DemanderReservation() {
         super();
-        // TODO Auto-generated constructor stub
+  
     }
     
     public void init() {
@@ -48,11 +42,9 @@ public class DemanderReservation extends HttpServlet {
     	this.reservationDao = daoSession.getReservationDao();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
         String id = request.getParameter(ATT_ID);
 		
 		TrouverTopoForm formT = new TrouverTopoForm(topoDao);
@@ -74,11 +66,8 @@ public class DemanderReservation extends HttpServlet {
 		this.getServletContext().getRequestDispatcher(  VUE_CONFIRMATION_RESERVATION  ).forward( request, response );
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		doGet(request, response);
 	}
 

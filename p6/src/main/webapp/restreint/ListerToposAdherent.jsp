@@ -38,7 +38,7 @@
                 <tr>
                 <c:if test="${boucle1.count == boucle2.count}">
                 
-                    <%-- Affichage des propriétés du bean SiteEscalade--%>
+                 
                     <td class = "for_display"><a  href="<c:url value="/ModifierTopo"><c:param name="idTopo" value="${ mapTopos.key }" /></c:url>"><c:out value="${ mapTopos.value.nom }"></c:out></a></td>
                     <td><c:out value="${ dateParution}"></c:out></td>                   
                     <td><c:out value="${ mapTopos.value.disponibilite }"></c:out></td>

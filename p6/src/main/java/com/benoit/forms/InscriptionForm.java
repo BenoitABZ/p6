@@ -253,9 +253,7 @@ public class InscriptionForm {
 		 }
 		
 	}
-    /*
-     * Ajoute un message correspondant au champ spécifié à la map des erreurs.
-     */
+
      private void setErreur( String champ, String message ) {
         erreurs.put( champ, message );
     }

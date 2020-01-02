@@ -19,9 +19,6 @@ import com.benoit.forms.SupprimerTopoForm;
 import com.benoit.forms.TrouverReservationForm;
 import com.benoit.forms.TrouverTopoForm;
 
-/**
- * Servlet implementation class SupprimerReservation
- */
 @WebServlet( "/SupprimerReservation" )
 public class SupprimerReservation extends HttpServlet {
 	private static final long serialVersionUID         = 1L;
@@ -30,13 +27,10 @@ public class SupprimerReservation extends HttpServlet {
 	private static final String ATT_FORM_S             = "formS";
 	private static final String ATT_FORM_T             = "formT";
 	ReservationDao reservationDao = null;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public SupprimerReservation() {
         super();
-        // TODO Auto-generated constructor stub
+  
     }
     
     public void init() {
@@ -44,11 +38,7 @@ public class SupprimerReservation extends HttpServlet {
     	this.reservationDao = daoSession.getReservationDao();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		
 		HttpSession session = request.getSession();
 		
@@ -69,11 +59,8 @@ public class SupprimerReservation extends HttpServlet {
 		response.sendRedirect(VUE_RESERVATION);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		doGet(request, response);
 	}
 

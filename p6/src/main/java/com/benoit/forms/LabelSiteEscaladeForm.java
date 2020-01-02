@@ -77,22 +77,5 @@ private static final String CHAMP_SITE_ESCALADE = "siteEscalade";
         erreurs.put( champ, message );
     }
     
-	  private String getChamp (HttpServletRequest request, String parameter) {
-			
-		 String valeur = request.getParameter(parameter);
-		
-		 if(valeur == null) return null;
-		
-		 else {
-			 
-			 return valeur;
-		 
-		 }
-		
-		
-		
-		
-			
-		}
 
 }

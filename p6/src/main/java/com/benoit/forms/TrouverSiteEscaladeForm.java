@@ -36,9 +36,7 @@ private String              resultat;
 		SiteEscalade siteEscalade = null;
 		
 		try {
-			
-			
-				
+					
 			    siteEscalade = siteEscaladeDao.trouver(id);
 				
 				if(siteEscalade != null) {
@@ -59,11 +57,11 @@ private String              resultat;
 		          resultat = "Échec: une erreur imprévue est survenue, merci de réessayer dans quelques instants.";
 		          
 		            e.printStackTrace();	
-				}
+				   }
 			
 		      return siteEscalade;
 				
-			}
+			 }
       private void setErreur( String champ, String message ) {
           erreurs.put( champ, message );
       }

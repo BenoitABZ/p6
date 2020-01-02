@@ -11,10 +11,7 @@ import com.benoit.entities.Adherent;
 
 
 public class UpgradeAdherentForm {
-	private static final String CHAMP_ADHERENT         = "adherent";
-
-    
-    
+	
     private String              resultat;
     
     private Map<String, String> erreurs         = new HashMap<String, String>();
@@ -38,15 +35,11 @@ public class UpgradeAdherentForm {
 	
 	
 	public Adherent upgradeAdherent(Adherent adherent) {
-	
-		//Adherent adherent = (Adherent) request.getAttribute(CHAMP_ADHERENT);
-	    
+
 		Boolean membre = adherent.getMembre();
 		
 		membre = true;
-		
-		
-		
+				
 		try {
 			
 			if (erreurs.isEmpty()) {
@@ -82,22 +75,5 @@ public class UpgradeAdherentForm {
         erreurs.put( champ, message );
     }
     
-	  private String getChamp (HttpServletRequest request, String parameter) {
-			
-		 String valeur = request.getParameter(parameter);
-		
-		 if(valeur == null) return null;
-		
-		 else {
-			 
-			 return valeur;
-		 
-		 }
-		
-		
-		
-		
-			
-		}
 
 }

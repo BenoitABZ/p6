@@ -26,9 +26,6 @@ import com.benoit.forms.TrouverAdherentForm;
 import com.benoit.forms.TrouverSiteEscaladeForm;
 import com.benoit.forms.TrouverTopoForm;
 
-/**
- * Servlet implementation class AfficherTopo
- */
 @WebServlet( "/AfficherTopo" )
 public class AfficherTopo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -43,13 +40,10 @@ public class AfficherTopo extends HttpServlet {
 	TopoDao topoDao = null;
 	
 	AdherentDao adherentDao = null;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public AfficherTopo() {
         super();
-        // TODO Auto-generated constructor stub
+       
     }
     
     public void init() {
@@ -58,17 +52,12 @@ public class AfficherTopo extends HttpServlet {
     	this.adherentDao = daoSession.getAdherentDao();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
         String id = request.getParameter(ATT_ID);
 		
 		TrouverTopoForm form = new TrouverTopoForm(topoDao);
-		
-		
-		
+				
 		Topo topo = form.trouver(id);
 		
 	 	LocalDate date = topo.getDateParution();
@@ -82,9 +71,7 @@ public class AfficherTopo extends HttpServlet {
 		Adherent adherent = (Adherent)session.getAttribute(ATT_ADHERENT);
 		
 		Long idAdherent = adherent.getId();
-		
-		
-		
+				
 		request.setAttribute("idAdherent", idAdherent);
 		
 		TrouverAdherentForm formA = new TrouverAdherentForm(adherentDao);
@@ -104,11 +91,8 @@ public class AfficherTopo extends HttpServlet {
 		this.getServletContext().getRequestDispatcher(VUE_SITE_ESCALADE).forward( request, response );
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
 }

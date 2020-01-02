@@ -201,7 +201,7 @@
     <table>
              <caption class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</caption>   
              <c:if test="${!empty requestScope.mapSitesEscalade}"> 
-             <tr>
+                 <tr>
                     <th>Nom</th>
                     <th>Département</th>
                     <th>Commune</th>                   
@@ -209,10 +209,8 @@
                     <th>Cotation Max</th>        
                     <th>Nombre de secteurs</th>
                                      
-                </tr>
-                <%-- Parcours de la liste des contacts, et utilisation de l'objet varStatus. --%>
-                
-                 
+                  </tr>
+
                 <c:forEach items="${ requestScope.mapSitesEscalade }" var="mapSites" varStatus="boucle1">
                     <c:forEach items="${ requestScope.mapCotationMin }" var="mapCotationMin" varStatus="boucle2">
                         <c:forEach items="${ requestScope.mapCotationMax }" var="mapCotationMax" varStatus="boucle3">
